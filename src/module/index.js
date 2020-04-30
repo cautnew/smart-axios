@@ -1,4 +1,5 @@
 const GET = require('./get').axiosGet;
+const POST = require('./post').axiosPost;
 
 /*
 let config = {
@@ -8,17 +9,14 @@ let config = {
 }
 */
 
-function routes(path, { type, success = null, failure = null }) {
-	if (success || failure) {
-		if (!success || !failure) {
-			console.error('Requires response function!');
-			return;
-		}
-	}
-
-	switch (type) {
+function routes(path, args) {
+	switch (args.type) {
 		case 'GET':
-			GET(path, success, failure);
+			GET(path, { ...args });
+			break;
+
+		case 'POST':
+			POST(path, { ...args });
 			break;
 
 		default:
@@ -28,5 +26,5 @@ function routes(path, { type, success = null, failure = null }) {
 }
 
 module.exports = {
-	routes
+	routes,
 };
