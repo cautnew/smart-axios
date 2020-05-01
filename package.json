@@ -9,6 +9,10 @@
 		"test": "jest --config ./jest.config.json",
 		"testing": "jest --watchAll --config ./jest.config.json"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/cl4pper/smart-axios"
+	},
 	"author": "cl4pper@gmail.com",
 	"license": "ISC",
 	"dependencies": {
