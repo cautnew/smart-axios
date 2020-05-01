@@ -10,11 +10,12 @@ function axiosGet(path, { success, failure, options }) {
 	return axios
 		.get(path, { ...options })
 		.then((data) => {
-			return success(defaultResponse({ ...data }));
+			return success ? success(defaultResponse({ ...data })) : data;
 		})
 		.catch((err) => {
-			console.log('ERROR: ', err);
-			return failure(defaultResponse({ ...err.response, error: err.response.statusText }));
+			return failure
+				? failure(defaultResponse({ ...err.response, error: err.response.statusText }))
+				: err;
 		});
 }
 

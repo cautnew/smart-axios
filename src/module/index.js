@@ -1,14 +1,6 @@
 const GET = require('./get').axiosGet;
 const POST = require('./post').axiosPost;
 
-/*
-let config = {
-    type: String,
-    success: Function,
-    failure: Function
-}
-*/
-
 function routes(path, args) {
 	switch (args.type) {
 		case 'GET':

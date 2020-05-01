@@ -10,11 +10,12 @@ function axiosPost(path, { success, failure, body, options }) {
 	return axios
 		.post(path, { ...body }, { ...options })
 		.then((data) => {
-			return success(defaultResponse({ ...data }));
+			return success ? success(defaultResponse({ ...data })) : data;
 		})
 		.catch((err) => {
-			return failure(defaultResponse({ ...err.response, error: err.response.statusText }));
-			// return console.log(err);
+			return failure
+				? failure(defaultResponse({ ...err.response, error: err.response.statusText }))
+				: err;
 		});
 }
 
