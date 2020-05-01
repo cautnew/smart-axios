@@ -6,14 +6,15 @@ const defaultResponse = ({ status, data = null, error = [] }) => ({
 	error,
 });
 
-function axiosPost(path, success, failure) {
+function axiosPost(path, { success, failure, body, options }) {
 	return axios
-		.get(path)
+		.post(path, { ...body }, { ...options })
 		.then((data) => {
 			return success(defaultResponse({ ...data }));
 		})
 		.catch((err) => {
 			return failure(defaultResponse({ ...err.response, error: err.response.statusText }));
+			// return console.log(err);
 		});
 }
 
