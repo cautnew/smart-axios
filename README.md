@@ -1,16 +1,39 @@
 # smart-axios
 
-Use axios without to much complication.
+Another way to use axios.
 
-Enginered by [node-plate](https://github.com/cl4pper/node-plate)
+## Installation
 
-## Instructions:
+```
+npm i smartAxios --save
+```
 
-1. **fork**/**clone** this repo
-2. **npm i** (inside project root directory)
-3. **npm run server** (to run project)
+## Example
 
-### Requires:
+```
+import { smartAxios } from 'smartAxios';
 
-- [Node](https://nodejs.org/en/)
-- [NPM](https://www.npmjs.com)
+smartAxios('https://jsonplaceholder.typicode.com/posts', {
+  type: 'POST',
+  success: (res) => console.log(res),
+  failure: (err) => console.log(err),
+  body: {
+    title: 'Title Lorem',
+    body: 'Body lorem.',
+  },
+  options: {
+    headers: {
+      Authentication: 'Bearer fkskfjhsdfhdskjfhsdjkfhdkjshfsdjhkk',
+    },
+  },
+});
+```
+
+## Types
+
+- GET
+- POST
+
+### Thanks to:
+
+- [JSONPlaceholder](https://github.com/typicode/jsonplaceholder)

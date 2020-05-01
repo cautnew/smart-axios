@@ -1,10 +1,10 @@
 {
-	"name": "mini-server",
+	"name": "smart-axios",
 	"version": "1.0.0",
-	"description": "A mini server to run simple pages",
-	"main": "server.js",
+	"description": "Another way to use axios.s",
+	"main": "index.js",
 	"scripts": {
-		"server": "nodemon src/server.js",
+		"app": "nodemon src/index.js",
 		"lint:fix": "prettier --write '**/*.js'",
 		"test": "jest --config ./jest.config.json",
 		"testing": "jest --watchAll --config ./jest.config.json"
