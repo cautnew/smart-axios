@@ -1,5 +1,5 @@
 {
-	"name": "@cl4pper/smart-axios",
+	"name": "smart-axios",
 	"version": "1.0.0",
 	"description": "Another way to use axios.s",
 	"main": "index.js",
