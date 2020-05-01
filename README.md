@@ -5,7 +5,7 @@ Another way to use axios.
 ## Installation
 
 ```
-npm i smartAxios --save
+npm i smart-axios
 ```
 
 ## Example
