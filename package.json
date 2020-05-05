@@ -1,6 +1,6 @@
 {
 	"name": "smart-axios",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "An way to standardize the use of axios.",
 	"main": "index.js",
 	"scripts": {
