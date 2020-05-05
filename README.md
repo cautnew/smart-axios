@@ -61,6 +61,19 @@ smartAxios(REQUEST_ROUTE, {
 });
 ```
 
+### A react use case example
+
+If you need to set a trigger action, set it using the **action** prop.
+
+```
+smartAxios(REQUEST_ROUTE, {
+  type: 'GET',
+  action: GET_ACTION()
+  success: (res) => GET_SUCCESS(res),
+  failure: (err) => GET_FAIL(err),
+});
+```
+
 ### Core team
 
 - [cl4pper](https://github.com/cl4pper)

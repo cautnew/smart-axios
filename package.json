@@ -1,10 +1,10 @@
 {
 	"name": "smart-axios",
 	"version": "1.0.1",
-	"description": "Another way to use axios.s",
+	"description": "An way to standardize the use of axios.",
 	"main": "index.js",
 	"scripts": {
-		"app": "nodemon src/index.js",
+		"app": "node src/index.js",
 		"lint:fix": "prettier --write '**/*.js'",
 		"test": "jest --config ./jest.config.json",
 		"testing": "jest --watchAll --config ./jest.config.json"
