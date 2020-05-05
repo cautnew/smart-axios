@@ -1,22 +1,54 @@
 # smart-axios
 
-Another way to use axios.
+An way to standardize the use of axios.
 
 ## Installation
 
 ```
-npm i smartAxios --save
+npm i smartAxios
 ```
 
-## Example
+##
+
+## Instructions
+
+### GET
 
 ```
 import { smartAxios } from 'smartAxios';
 
-smartAxios('https://jsonplaceholder.typicode.com/posts', {
+smartAxios(REQUEST_ROUTE, {
+  type: 'GET',
+  success: (res) => SUCCESS_METHOD(res),
+  failure: (err) => FAIL_METHOD(err),
+});
+```
+
+### POST
+
+```
+import { smartAxios } from 'smartAxios';
+
+smartAxios(REQUEST_ROUTE, {
   type: 'POST',
-  success: (res) => console.log(res),
-  failure: (err) => console.log(err),
+  success: (res) => SUCCESS_METHOD(res),
+  failure: (err) => FAILURE_METHOD(err),
+  body: {
+    title: 'Title Lorem',
+    body: 'Body lorem.',
+  },
+});
+```
+
+### If I need to add a header ?
+
+Just add an **options** prop into the request body (see an example below):
+
+```
+smartAxios(REQUEST_ROUTE, {
+  type: 'POST',
+  success: (res) => SUCCESS_METHOD(res),
+  failure: (err) => FAILURE_METHOD(err),
   body: {
     title: 'Title Lorem',
     body: 'Body lorem.',
@@ -29,11 +61,6 @@ smartAxios('https://jsonplaceholder.typicode.com/posts', {
 });
 ```
 
-## Types
+### Core team
 
-- GET
-- POST
-
-### Thanks to:
-
-- [JSONPlaceholder](https://github.com/typicode/jsonplaceholder)
+- [cl4pper](https://github.com/cl4pper)
