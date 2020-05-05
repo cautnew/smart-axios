@@ -6,7 +6,9 @@ const defaultResponse = ({ status, data = null, error = [] }) => ({
 	error,
 });
 
-function axiosPost(path, { success, failure, body, options }) {
+function axiosPost(path, { action, success, failure, body, options }) {
+	if (action) action;
+
 	return axios
 		.post(path, { ...body }, { ...options })
 		.then((data) => {

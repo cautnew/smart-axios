@@ -6,7 +6,9 @@ const defaultResponse = ({ status, data = null, error = [] }) => ({
 	error,
 });
 
-function axiosGet(path, { success, failure, options }) {
+function axiosGet(path, { action, success, failure, options }) {
+	if (action) action;
+
 	return axios
 		.get(path, { ...options })
 		.then((data) => {
