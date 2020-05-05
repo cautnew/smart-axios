@@ -1,6 +1,6 @@
 {
 	"name": "smart-axios",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Another way to use axios.s",
 	"main": "index.js",
 	"scripts": {
@@ -9,12 +9,14 @@
 		"test": "jest --config ./jest.config.json",
 		"testing": "jest --watchAll --config ./jest.config.json"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/cl4pper/smart-axios"
+	},
 	"author": "cl4pper@gmail.com",
 	"license": "ISC",
 	"dependencies": {
 		"axios": "^0.19.2",
-		"dotenv": "^8.2.0",
-		"express": "^4.17.1",
 		"module-alias": "^2.2.2"
 	},
 	"devDependencies": {
@@ -22,6 +24,6 @@
 		"eslint": "^6.8.0"
 	},
 	"_moduleAliases": {
-		"@module": "./src/module"
+		"@methods": "./src/methods"
 	}
 }
