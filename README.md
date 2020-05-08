@@ -77,3 +77,4 @@ smartAxios(REQUEST_ROUTE, {
 ### Core team
 
 - [cl4pper](https://github.com/cl4pper)
+- [Samuel Almeida](https://github.com/samuelalmeida-dev)
