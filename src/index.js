@@ -1,20 +1,19 @@
-const GET = require('./methods/get').axiosGet;
-const POST = require('./methods/post').axiosPost;
+const { GET , POST } = require('./methods');
 
 function smartAxios(path, args) {
-	switch (args.type) {
-		case 'GET':
-			GET(path, { ...args });
-			break;
+	const execute = selectVerb(args);
+	execute(path, args);
+}
 
-		case 'POST':
-			POST(path, { ...args });
-			break;
-
-		default:
-			console.error('You need to set a value for type property.');
-			break;
+function selectVerb({type="default"}){
+	
+	verbs = {
+		'GET':  (path, args) => GET(path, args),
+		'POST': (path, args) => POST(path, args),
+		'default': (_, __) => console.error('You need to set a value for type property.'),
 	}
+
+	return verbs[type] || verbs.default;
 }
 
 module.exports = { smartAxios };

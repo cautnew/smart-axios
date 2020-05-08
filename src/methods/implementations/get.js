@@ -6,11 +6,11 @@ const defaultResponse = ({ status, data = null, error = [] }) => ({
 	error,
 });
 
-function axiosPost(path, { action, success, failure, body, options }) {
+function get(path, { action, success, failure, options }) {
 	if (action) action;
 
 	return axios
-		.post(path, { ...body }, { ...options })
+		.get(path, { ...options })
 		.then((data) => {
 			return success ? success(defaultResponse({ ...data })) : data;
 		})
@@ -21,4 +21,4 @@ function axiosPost(path, { action, success, failure, body, options }) {
 		});
 }
 
-exports.axiosPost = axiosPost;
+module.exports = get;
