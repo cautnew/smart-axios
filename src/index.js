@@ -16,4 +16,4 @@ function selectVerb({type="default"}){
 	return verbs[type] || verbs.default;
 }
 
-module.exports = smartAxios;
+module.exports = { smartAxios };
